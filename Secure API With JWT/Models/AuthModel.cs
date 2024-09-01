@@ -1,4 +1,6 @@
-﻿namespace Secure_API_With_JWT.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Secure_API_With_JWT.Models
 {
     public class AuthModel
     {
@@ -8,8 +10,12 @@
         public string Token { get; set; }
         public bool IsAuthinticated { get; set; }
 
-        public DateTime ExpiresOn { get; set; }
+        //public DateTime ExpiresOn { get; set; }
 
         public List<string> Roles { get; set; }
+
+        [JsonIgnore]
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiration { get; set; }
     }
 }

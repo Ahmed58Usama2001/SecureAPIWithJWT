@@ -10,5 +10,7 @@ namespace Secure_API_With_JWT.Models
 
         [Required, MaxLength(50)]
         public string LastName { get; set; }
+
+        public List<RefreshToken>? RefreshTokens { get; set; }
     }
 }
